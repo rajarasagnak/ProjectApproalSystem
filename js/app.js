@@ -78,17 +78,15 @@ function handleInitialState() {
 // Update navigation based on login status
 function updateNavigation(user) {
     if (navLinks) {
-        // Clear existing navigation links
-        while (navLinks.children.length > 1) {
-            navLinks.removeChild(navLinks.lastChild);
-        }
+        // Clear existing navigation links except the Home and Login links
+        const homeLink = navLinks.querySelector('a.active'); // First link (Home)
         
-        // Add Home link
-        const homeLink = document.createElement('a');
-        homeLink.href = '/';
-        homeLink.textContent = 'Home';
-        homeLink.classList.add('active');
-        navLinks.insertBefore(homeLink, navLinks.firstChild);
+        // Remove any links that are not Home or Login
+        Array.from(navLinks.children).forEach(child => {
+            if (child !== homeLink && child !== loginNav) {
+                navLinks.removeChild(child);
+            }
+        });
         
         if (user) {
             // Add role-specific dashboard link
