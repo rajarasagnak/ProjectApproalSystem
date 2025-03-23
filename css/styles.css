@@ -169,6 +169,27 @@ button:hover, .primary-btn:hover {
     color: #555;
 }
 
+/* Key Features List Styling */
+.panel ul {
+    text-align: left;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.panel ul li {
+    padding: 8px 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.panel ul li i {
+    margin-right: 10px;
+    color: #007BFF;
+    width: 20px;
+    text-align: center;
+}
+
 .roles-overview {
     margin-top: 30px;
     display: grid;
