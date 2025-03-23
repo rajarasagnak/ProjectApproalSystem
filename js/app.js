@@ -50,6 +50,16 @@ if (getStartedBtn) {
     });
 }
 
+// Add event listener for Home link
+document.addEventListener('click', function(e) {
+    // Check if the clicked element is the Home link in the navigation
+    if (e.target.tagName === 'A' && e.target.textContent === 'Home') {
+        e.preventDefault();
+        // Show welcome section, hide login section
+        toggleSections(false);
+    }
+});
+
 if (loginNav) {
     loginNav.addEventListener('click', function(e) {
         e.preventDefault();
