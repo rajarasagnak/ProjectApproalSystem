@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Approval System</title>
+    <link rel="icon" type="image/jpeg" href="pulvark2.png">
+    <meta property="og:image" content="pulvark2.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: #f4f4f4;
+            transition: all 0.5s ease;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: #333;
+            color: white;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: 0.3s;
+        }
+        .navbar a:hover {
+            color: yellow;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .panel {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-left: 5px solid #007BFF;
+            background: #e9ecef;
+            transition: 0.3s;
+        }
+        .panel:hover {
+            transform: translateX(10px);
+        }
+        button {
+            padding: 10px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h2>Project Approval System</h2>
+        <div>
+            <a href="#">Home</a>
+            <a href="#admin">Admin Panel</a>
+            <a href="#hod">HOD Panel</a>
+            <a href="#incharge">Project In-charge</a>
+            <a href="#guide">Internal Guide</a>
+            <a href="#student">Student Panel</a>
+            <a href="#login">Login</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="panel" id="admin">
+            <h3>Admin Panel</h3>
+            <p>- Provide user/password to each member.</p>
+            <p>- Create new users, handle changing requests.</p>
+            <p>- Send notifications to all members.</p>
+            <p>- Create different roles and grant permissions.</p>
+        </div>
+        <div class="panel" id="hod">
+            <h3>Head of Department Panel</h3>
+            <p>- View project details.</p>
+            <p>- Approve projects according to requirements.</p>
+            <p>- Provide comments and feedback.</p>
+        </div>
+        <div class="panel" id="incharge">
+            <h3>Project In-charge Panel</h3>
+            <p>- View project details.</p>
+            <p>- Approve projects according to requirements.</p>
+            <p>- Provide comments and feedback.</p>
+        </div>
+        <div class="panel" id="guide">
+            <h3>Internal Guide Panel</h3>
+            <p>- View project details.</p>
+            <p>- Approve projects according to requirements.</p>
+            <p>- Provide comments and feedback.</p>
+        </div>
+        <div class="panel" id="student">
+            <h3>Student Panel</h3>
+            <p>- Update profile details and change password.</p>
+            <p>- Upload project abstracts, reports, and code.</p>
+            <p>- Track project approval status.</p>
+            <p>- Receive notifications upon approval.</p>
+        </div>
+        <div class="panel" id="login">
+            <h3>Login Panel</h3>
+            <p>- Secure login using RSA encryption.</p>
+            <button onclick="encryptLogin()">Login Securely</button>
+        </div>
+    </div>
+    <script>
+        function encryptLogin() {
+            alert("Encryption in progress... (Backend functionality needed)");
+        }
+    </script>
+</body>
+</html>
