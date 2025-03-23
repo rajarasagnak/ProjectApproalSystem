@@ -50,6 +50,19 @@ if (getStartedBtn) {
     });
 }
 
+// Add event listeners for login redirect buttons
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all buttons with login-redirect class
+    const loginRedirectButtons = document.querySelectorAll('.login-redirect');
+    
+    // Add click event to each button
+    loginRedirectButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            toggleSections(true);
+        });
+    });
+});
+
 // Add event listener for Home link
 document.addEventListener('click', function(e) {
     // Check if the clicked element is the Home link in the navigation
@@ -108,8 +121,8 @@ function updateNavigation(user) {
             // Change login link to logout
             loginNav.textContent = 'Logout';
         } else {
-            // Change to Login
-            loginNav.textContent = 'Login';
+            // Change to Sign In
+            loginNav.textContent = 'Sign In';
         }
     }
 }
