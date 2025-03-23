@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOD Dashboard - Project Approval System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <h2>Project Approval System</h2>
+        <div>
+            <a href="../index.html">Home</a>
+            <a href="#" class="active">Dashboard</a>
+            <a href="#" id="logout-btn">Logout</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h2 id="user-greeting">Welcome, Head of Department</h2>
+        
+        <div class="dashboard">
+            <div id="dashboard-stats" class="dashboard-stats">
+                <!-- Stats will be loaded here -->
+            </div>
+            
+            <div class="panel">
+                <h3><i class="fas fa-tasks"></i> HOD Actions</h3>
+                <button id="mark-all-read-btn" class="secondary-btn">Mark All Notifications as Read</button>
+            </div>
+            
+            <div class="panel">
+                <h3><i class="fas fa-clipboard-list"></i> Projects for Review</h3>
+                <div id="projects-table">
+                    <!-- Projects table will be loaded here -->
+                </div>
+            </div>
+            
+            <div class="panel" id="project-details-section" style="display: none;">
+                <h3 id="project-title">Project Title</h3>
+                <div class="project-info">
+                    <p><strong>Status:</strong> <span id="project-status"></span></p>
+                    <p><strong>Abstract:</strong></p>
+                    <p id="project-abstract"></p>
+                    
+                    <p><strong>Uploaded Files:</strong></p>
+                    <div id="project-files">
+                        <!-- Files will be loaded here -->
+                    </div>
+                    
+                    <div id="approval-actions" class="mt-20">
+                        <!-- Approval/rejection buttons will be added here -->
+                    </div>
+                    
+                    <h4 class="mt-20">Comments:</h4>
+                    <div id="comments-section">
+                        <!-- Comments will be loaded here -->
+                    </div>
+                    
+                    <div class="form-group mt-20">
+                        <label for="comment-text">Add Comment:</label>
+                        <textarea id="comment-text" rows="3"></textarea>
+                        <button id="submit-comment-btn" class="primary-btn">Add Comment</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel">
+                <h3><i class="fas fa-bell"></i> Notifications</h3>
+                <div id="notifications-container">
+                    <!-- Notifications will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Project Approval System. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/projects.js"></script>
+    <script src="../js/notifications.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check authorization
+            if (!checkAuthorization(['hod'])) {
+                return;
+            }
+            
+            // Initialize dashboard
+            initializeDashboard('hod');
+            
+            // Mark all read button functionality
+            const markAllReadBtn = document.getElementById('mark-all-read-btn');
+            if (markAllReadBtn) {
+                markAllReadBtn.addEventListener('click', function() {
+                    markAllNotificationsAsRead();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

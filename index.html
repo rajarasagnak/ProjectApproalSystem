@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Approval System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <h2>Project Approval System</h2>
+        <div id="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#" id="login-nav">Login</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="welcome-section" id="welcome-section">
+            <h2>Welcome to Project Approval System</h2>
+            <p>A comprehensive platform for project submission, review, and approval across different roles.</p>
+            
+            <div class="panel">
+                <h3>Key Features</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Role-based access control</li>
+                    <li><i class="fas fa-check"></i> Project submission and tracking</li>
+                    <li><i class="fas fa-check"></i> Multi-level approval workflow</li>
+                    <li><i class="fas fa-check"></i> Document management</li>
+                    <li><i class="fas fa-check"></i> Notification system</li>
+                </ul>
+                <button id="get-started-btn" class="primary-btn">Get Started</button>
+            </div>
+            
+            <div class="roles-overview">
+                <div class="panel" id="admin">
+                    <h3><i class="fas fa-user-shield"></i> Admin Panel</h3>
+                    <p>- Provide user/password to each member.</p>
+                    <p>- Create new users, handle changing requests.</p>
+                    <p>- Send notifications to all members.</p>
+                    <p>- Create different roles and grant permissions.</p>
+                </div>
+                
+                <div class="panel" id="hod">
+                    <h3><i class="fas fa-user-tie"></i> Head of Department Panel</h3>
+                    <p>- View project details.</p>
+                    <p>- Approve projects according to requirements.</p>
+                    <p>- Provide comments and feedback.</p>
+                </div>
+                
+                <div class="panel" id="incharge">
+                    <h3><i class="fas fa-user-cog"></i> Project In-charge Panel</h3>
+                    <p>- View project details.</p>
+                    <p>- Approve projects according to requirements.</p>
+                    <p>- Provide comments and feedback.</p>
+                </div>
+                
+                <div class="panel" id="guide">
+                    <h3><i class="fas fa-chalkboard-teacher"></i> Internal Guide Panel</h3>
+                    <p>- View project details.</p>
+                    <p>- Approve projects according to requirements.</p>
+                    <p>- Provide comments and feedback.</p>
+                </div>
+                
+                <div class="panel" id="student">
+                    <h3><i class="fas fa-user-graduate"></i> Student Panel</h3>
+                    <p>- Update profile details and change password.</p>
+                    <p>- Upload project abstracts, reports, and code.</p>
+                    <p>- Track project approval status.</p>
+                    <p>- Receive notifications upon approval.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="login-section" class="login-section" style="display: none;">
+            <h2>Login to Your Account</h2>
+            <div class="panel login-panel">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password">
+                </div>
+                <div class="form-group">
+                    <button id="login-btn" class="primary-btn">Login</button>
+                </div>
+                <div id="login-error" class="error-message"></div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Project Approval System. All rights reserved.</p>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
